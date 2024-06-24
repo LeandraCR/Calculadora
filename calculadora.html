@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
         }
-
-        .fundo {
-            background-image: linear-gradient(45deg, black, crimson);
+        .fundo{
+            background-image: linear-gradient(45deg,black, crimson);
             height: 100vh;
             color: #fff;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
-
-        .calculadora {
+        .calculadora{
             position: absolute;
             background-color: rgba(0, 0, 0, 0.8);
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
             border-radius: 15px;
             padding: 15px;
         }
-
-        .botao {
+        .botao{
             width: 50px;
             height: 50px;
             font-size: 25px;
             cursor: pointer;
             margin: 3px;
-            background-color: rgb(31, 31, 31);
+            background-color: rgb(31,31,31);
             border: none;
             color: #fff;
         }
-
-        .botao:hover {
+        .botao:hover{
             background-color: black;
         }
-
-        #resultado {
+        #resultado{
             background-color: white;
             width: 207px;
             height: 30px;
@@ -56,18 +50,16 @@
         }
     </style>
 </head>
-
 <body>
     <div class="fundo">
+        <h1>Gustavo Neitzke</h1>
         <div class="calculadora">
             <h1>Calculadora</h1>
             <p id="resultado"></p>
             <table>
                 <tr>
                     <td><button class="botao" onclick="clean()">C</button></td>
-                    <td><button class="botao" onclick="back()">
-                            << /button>
-                    </td>
+                    <td><button class="botao" onclick="back()"><</button></td>
                     <td><button class="botao" onclick="insert('/')">/</button></td>
                     <td><button class="botao" onclick="insert('*')">X</button></td>
                 </tr>
@@ -97,28 +89,32 @@
         </div>
     </div>
     <script>
-        function insert(num) {
+        function insert(num)
+        {
             var numero = document.getElementById('resultado').innerHTML;
             document.getElementById('resultado').innerHTML = numero + num;
         }
-
-        function clean() {
+        function clean()
+        {
             document.getElementById('resultado').innerHTML = "";
         }
-
-        function back() {
+        function back()
+        {
             var resultado = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
         }
-
-        function calcular() {
+        function calcular()
+        {
             var resultado = document.getElementById('resultado').innerHTML;
-            if (resultado) {
+            if(resultado)
+            {
                 document.getElementById('resultado').innerHTML = eval(resultado);
             }
-            else {
+            else
+            {
                 document.getElementById('resultado').innerHTML = "Nada..."
             }
-
         }
     </script>
+</body>
+</html>
